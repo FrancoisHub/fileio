@@ -5,6 +5,7 @@
 45 print "4. read file to end"
 50 print "5. exit"
 60 input "select an option: "; op%
+65 filname$="items.dat"
 70 if op% = 1 then gosub 1000
 95 if op% = 4 then gosub 500
 100 if op% = 5 then end
@@ -12,19 +13,21 @@
 
 500 open 1,8,2,"items.dat,s,r"
 510 input#1,a$:print a$
-520 if st=0 then 20
+520 if st=0 then 510
 530 close 1
-540 print "eof status is st = " st
+540 print "File read to end! st = " st
 550 return
 
 1000 input "enter the item: "; item$
 1010 input "enter the item location: "; loc$
-1020 open 1,8,2,"items.dat,s,w"
+rem 1020 open 1,8,2,"items.dat,s,w"
+rem we append instead as the line above overwrites the file
+1020 open 1,8,2,"items.dat,a"
+rem 1025 print "st=" st
 1030 print#1, item$ + "=" + loc$
 1040 close 1
 1050 print "item added!"
 1060 return
-
 
 
 

@@ -18,7 +18,7 @@
     <AutoLaunchName>FileIO.prg</AutoLaunchName>
     <NoSingleFileBuild>False</NoSingleFileBuild>
     <CreatedWithVersion>CBM prg Studio 4.1.0</CreatedWithVersion>
-    <HasGitRepo>False</HasGitRepo>
+    <HasGitRepo>True</HasGitRepo>
     <GitIgnoreList />
     <UsingKickAssembler>False</UsingKickAssembler>
     <KickOutputFile />
@@ -53,6 +53,7 @@
         <FileName>dictionary.bas</FileName>
         <FileName>indexing.bas</FileName>
         <FileName>readFileToEnd.bas</FileName>
+        <FileName>checkFileExists.bas</FileName>
     </BuildList>
     <DetermineBuildOrder>0</DetermineBuildOrder>
     <PaddingByte>0</PaddingByte>
@@ -96,6 +97,17 @@
             <FileOpen>True</FileOpen>
         </SourceFile>
         <SourceFile>
+            <Name>readFileToEnd.bas</Name>
+            <PrgName />
+            <FileType>1</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>False</Topmost>
+            <FileOpen>True</FileOpen>
+        </SourceFile>
+        <SourceFile>
             <Name>writeFile.bas</Name>
             <PrgName />
             <FileType>1</FileType>
@@ -107,7 +119,7 @@
             <FileOpen>True</FileOpen>
         </SourceFile>
         <SourceFile>
-            <Name>readFileToEnd.bas</Name>
+            <Name>checkFileExists.bas</Name>
             <PrgName />
             <FileType>1</FileType>
             <IncludeInBuild>True</IncludeInBuild>
