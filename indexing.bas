@@ -1,11 +1,17 @@
-10 print " .----.                        .---."
-11 print "'---,  `.____________________.'  _  `."
-12 print "     )   ____________________   <_>  :"
-13 print ".---'  .'                    `.     .'"
-14 print " `----'                        `---'"
-20 filname$="items.dat"
-25 gosub 300
-30 print "item indexing program"
+1 print chr$(147)
+10 filname$="items.dat"
+15 gosub 300
+20 a$ = chr$(164)
+21 print ""
+22 a$ = a$+a$+a$+a$+a$+a$+a$+a$+a$+a$+a$+a$+a$+a$+a$+a$+a$+a$
+23 print "   .----.                      .---."
+24 print "  '---,  `."+a$".'  "+chr$(164)+"  `."
+25 print "       )   "+a$"   <"+chr$(164)+">  :"
+26 print "  .---'  .'                  `.     .'"
+27 print "   `----'                      `---'"
+28 print ""
+30 print "item indexing program:"
+31 print "======================"
 40 print "1. add item"
 50 print "2. search item"
 60 print "3. delete item"
