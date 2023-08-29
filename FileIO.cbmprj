@@ -55,6 +55,7 @@
         <FileName>readFileToEnd.bas</FileName>
         <FileName>checkFileExists.bas</FileName>
         <FileName>createEmptyFile.bas</FileName>
+        <FileName>stringSearch.bas</FileName>
     </BuildList>
     <DetermineBuildOrder>0</DetermineBuildOrder>
     <PaddingByte>0</PaddingByte>
@@ -66,6 +67,17 @@
     <SourceFiles>
         <SourceFile>
             <Name>checkFileExists.bas</Name>
+            <PrgName />
+            <FileType>1</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>False</Topmost>
+            <FileOpen>True</FileOpen>
+        </SourceFile>
+        <SourceFile>
+            <Name>createEmptyFile.bas</Name>
             <PrgName />
             <FileType>1</FileType>
             <IncludeInBuild>True</IncludeInBuild>
@@ -131,7 +143,7 @@
             <FileOpen>True</FileOpen>
         </SourceFile>
         <SourceFile>
-            <Name>createEmptyFile.bas</Name>
+            <Name>stringSearch.bas</Name>
             <PrgName />
             <FileType>1</FileType>
             <IncludeInBuild>True</IncludeInBuild>

@@ -1,5 +1,10 @@
-10 filname$="items.dat"
-20 gosub 300
+10 print " .----.                        .---."
+11 print "'---,  `.____________________.'  _  `."
+12 print "     )   ____________________   <_>  :"
+13 print ".---'  .'                    `.     .'"
+14 print " `----'                        `---'"
+20 filname$="items.dat"
+25 gosub 300
 30 print "item indexing program"
 40 print "1. add item"
 50 print "2. search item"
@@ -47,10 +52,8 @@ rem open file in append mode (,a) instead of writing (,s,w)
 1060 return
 
 
-
-
-2000 input "enter the word to search for: ", searchword
-2010 open 1,8,1,"s:dictionary.dat",2
+2000 input "enter the item to search for: ", search$
+2010 open 1,8,2,filname$+",s,r"
 2020 found = 0
 2030 while not eof(1)
 2040   input #1, line$
