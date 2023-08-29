@@ -20,7 +20,8 @@
 80 print "5. exit"
 90 input "select an option: "; op%
 100 if op% = 1 then gosub 1000
-130 if op% = 4 then gosub 500
+110 if op% = 2 then gosub 2000
+130 if op% = 4 then gosub 5000
 140 if op% = 5 then end
 150 goto 30
 
@@ -38,16 +39,6 @@ rem 325 print "st="st
 415 print "database file initialized!"
 420 return
 
-500 open 1,8,2,filname$+",s,r"
-502 print ""
-505 print "database file content:"
-508 print "======================"
-510 input#1,a$:print a$
-520 if st=0 then 510
-530 close 1
-540 print ""
-550 return
-
 1000 input "enter the item: "; item$
 1010 input "enter the item location: "; loc$
 rem open file in append mode (,a) instead of writing (,s,w)
@@ -57,8 +48,59 @@ rem open file in append mode (,a) instead of writing (,s,w)
 1050 print "item added!"
 1060 return
 
+2000 input "enter the item to search for: "; cr$: rem search criteria
+2005 print "you are searching for: "+cr$
+2010 open 1,8,2,filname$+",s,r"
+2020 input#1,rec$: print rec$
+2030 i=1: rem index counter
+2040 lrec=len(rec$): rem length of string to search
+2050 lcr=len(cr$): rem length of search criteria
+2060 rem loop marker
+2070 rem the mid$() function takes a substring of the record starting from 
+2080 rem index i and of length being the one of the search criteria.
+2090 rem compare the substring with the criteria to see if it is a match
+2100 if mid$(rec$, i, lcr)<>cr$ and i<lrec then i=i+1: goto 2060
+2110 rem check if there was a match by looking if the last result of the loop
+2120 rem matches our criteria.
+2130 rem use of abs() function to transform the boolean into an number
+2140 rem reason: is no boolean type on c64?
+2142 rem print "cr"+cr$
+2145 rem print "mid$(rec$, i, a) : "+mid$(rec$, i, lcr)
+2150 result=abs(mid$(rec$, i, lcr)=cr$)
+2160 if result = 0 then gosub 2600
+2170 if result = 1 then gosub 2700
+2300 if st=0 then 2020
+2400 close 1
+2500 return
 
-2000 input "enter the item to search for: ", search$
+2600 rem print "no match"
+2610 return
+
+2700 print "match"
+2710 rem print "search criteria:"+cr$
+2720 rem print "record found:"+rec$
+2730 idx=lcr+1: rem add 1 for equal sign
+2740 rr$=mid$(rec$, idx, lrec)
+2750 print "the item location is: "+rr$
+2800 return
+
+5000 open 1,8,2,filname$+",s,r"
+5010 print ""
+5020 print "database file content:"
+5030 print "======================"
+5040 input#1,a$:print a$
+5050 if st=0 then 5040
+5060 close 1
+5070 print ""
+5080 return
+
+
+
+
+
+
+
+2000 input "enter the item to search for: ", criteria$
 2010 open 1,8,2,filname$+",s,r"
 2020 found = 0
 2030 while not eof(1)

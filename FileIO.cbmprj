@@ -56,6 +56,7 @@
         <FileName>checkFileExists.bas</FileName>
         <FileName>createEmptyFile.bas</FileName>
         <FileName>stringSearch.bas</FileName>
+        <FileName>stringfunctions.bas</FileName>
     </BuildList>
     <DetermineBuildOrder>0</DetermineBuildOrder>
     <PaddingByte>0</PaddingByte>
@@ -74,7 +75,7 @@
             <Breakpoints />
             <Bookmarks />
             <Topmost>False</Topmost>
-            <FileOpen>True</FileOpen>
+            <FileOpen>False</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>createEmptyFile.bas</Name>
@@ -85,7 +86,7 @@
             <Breakpoints />
             <Bookmarks />
             <Topmost>False</Topmost>
-            <FileOpen>True</FileOpen>
+            <FileOpen>False</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>dictionary.bas</Name>
@@ -129,10 +130,10 @@
             <Breakpoints />
             <Bookmarks />
             <Topmost>False</Topmost>
-            <FileOpen>True</FileOpen>
+            <FileOpen>False</FileOpen>
         </SourceFile>
         <SourceFile>
-            <Name>writeFile.bas</Name>
+            <Name>stringfunctions.bas</Name>
             <PrgName />
             <FileType>1</FileType>
             <IncludeInBuild>True</IncludeInBuild>
@@ -150,8 +151,19 @@
             <Regions />
             <Breakpoints />
             <Bookmarks />
-            <Topmost>True</Topmost>
+            <Topmost>False</Topmost>
             <FileOpen>True</FileOpen>
+        </SourceFile>
+        <SourceFile>
+            <Name>writeFile.bas</Name>
+            <PrgName />
+            <FileType>1</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>False</Topmost>
+            <FileOpen>False</FileOpen>
         </SourceFile>
     </SourceFiles>
 </Project>
