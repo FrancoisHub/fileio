@@ -11,3 +11,6 @@ rem 20 input#1,a$:print a$
 
 200 print "file does not exist as i could not read st = " st
 210 return
+
+
+rem https://comp.sys.cbm.narkive.com/YeIrZdXd/how-to-check-for-file-s-existence-on-a-c64-disk

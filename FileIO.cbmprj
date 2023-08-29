@@ -54,6 +54,7 @@
         <FileName>indexing.bas</FileName>
         <FileName>readFileToEnd.bas</FileName>
         <FileName>checkFileExists.bas</FileName>
+        <FileName>createEmptyFile.bas</FileName>
     </BuildList>
     <DetermineBuildOrder>0</DetermineBuildOrder>
     <PaddingByte>0</PaddingByte>
@@ -63,6 +64,17 @@
     <RawExportList />
     <!--End of screen designer settings-->
     <SourceFiles>
+        <SourceFile>
+            <Name>checkFileExists.bas</Name>
+            <PrgName />
+            <FileType>1</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>False</Topmost>
+            <FileOpen>True</FileOpen>
+        </SourceFile>
         <SourceFile>
             <Name>dictionary.bas</Name>
             <PrgName />
@@ -119,7 +131,7 @@
             <FileOpen>True</FileOpen>
         </SourceFile>
         <SourceFile>
-            <Name>checkFileExists.bas</Name>
+            <Name>createEmptyFile.bas</Name>
             <PrgName />
             <FileType>1</FileType>
             <IncludeInBuild>True</IncludeInBuild>

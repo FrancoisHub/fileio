@@ -1,29 +1,46 @@
-10 print "item indexing program"
-20 print "1. add item"
-30 print "2. search item"
-40 print "3. delete item"
-45 print "4. read file to end"
-50 print "5. exit"
-60 input "select an option: "; op%
-65 filname$="items.dat"
-70 if op% = 1 then gosub 1000
-95 if op% = 4 then gosub 500
-100 if op% = 5 then end
-110 goto 10
+10 filname$="items.dat"
+20 gosub 300
+30 print "item indexing program"
+40 print "1. add item"
+50 print "2. search item"
+60 print "3. delete item"
+69 rem read file bugs if file emnpty!
+70 print "4. read file to end"
+80 print "5. exit"
+90 input "select an option: "; op%
+100 if op% = 1 then gosub 1000
+130 if op% = 4 then gosub 500
+140 if op% = 5 then end
+150 goto 30
 
-500 open 1,8,2,"items.dat,s,r"
+300 open 1,8,2,filname$+",s,r"
+rem 310 input#1,a$:print a$
+310 input#1,a$
+320 close 1
+rem 325 print "st="st
+330 if st=0 or st=64 then return
+340 if st<>0 then gosub 400
+350 return
+
+400 open 1,8,2,filname$+",s,w"
+410 close 1
+415 print "database file initialized!"
+420 return
+
+500 open 1,8,2,filname$+",s,r"
+502 print ""
+505 print "database file content:"
+508 print "======================"
 510 input#1,a$:print a$
 520 if st=0 then 510
 530 close 1
-540 print "File read to end! st = " st
+540 print ""
 550 return
 
 1000 input "enter the item: "; item$
 1010 input "enter the item location: "; loc$
-rem 1020 open 1,8,2,"items.dat,s,w"
-rem we append instead as the line above overwrites the file
-1020 open 1,8,2,"items.dat,a"
-rem 1025 print "st=" st
+rem open file in append mode (,a) instead of writing (,s,w)
+1020 open 1,8,2,filname$+",a"
 1030 print#1, item$ + "=" + loc$
 1040 close 1
 1050 print "item added!"
