@@ -21,6 +21,7 @@
 90 input "select an option: "; op%
 100 if op% = 1 then gosub 1000
 110 if op% = 2 then gosub 2000
+120 if op% = 3 then gosub 3000
 130 if op% = 4 then gosub 5000
 140 if op% = 5 then end
 150 goto 30
@@ -66,9 +67,9 @@
 2310 return
 
 2400 rem print "match"
-2405 ov=1
 2410 rem print "search criteria:"+cr$
 2420 rem print "record found:"+rec$
+2425 ov=1
 2430 idx=lcr+1: rem add 1 for equal sign
 2440 rem hacking the cr$ variable to re-use search subroutine
 2450 dr$=cr$
@@ -106,6 +107,16 @@
 2965 print ""
 2970 return
 
+3000 input "enter the item to delete: "; cr$
+3010 print "you are going to delete: "+cr$: print""
+3020 print "not implemented"
+3030 rem implementation probably need to look for items in an array in case
+3040 rem there is multiple matches, then ask user to chose one, then we need 
+3050 rem to know the line number in which the item is located in the file
+3060 rem look at deletion routine in book commoodore 64 data files
+3190 print"" 
+3200 return 
+
 5000 open 1,8,2,filname$+",s,r"
 5010 print ""
 5020 print "database file content:"
@@ -115,33 +126,3 @@
 5060 close 1
 5070 print ""
 5080 return
-
-
-
-
-
-
-
-3000 input "enter the word to delete: ", deleteword
-3010 open 1,8,1,"s:dictionary.dat",2
-3020 found = 0
-3030 tempfile$ = "s:temp.dat"
-3040 open 2,8,2,tempfile$,1
-3050 while not eof(1)
-3060   input #1, line$
-3070   word = left$(line$, instr(line$, "=") - 1)
-3080   if word = deleteword then
-3090     found = 1
-3100   else
-3110     print #2, line$
-3120   end if
-3130 wend
-3140 close 1
-3150 close 2
-3160 if found then
-3170   load tempfile$,8,1
-3180   print "word deleted!"
-3190 else
-3200   print "word not found!"
-3210 end if
-3220 return
