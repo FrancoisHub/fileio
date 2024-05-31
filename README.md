@@ -6,6 +6,8 @@ It works like a dictionary, we can add, delete and search for items to know thei
 
 Currently uses Sequential file. Might create a version using Relative files later.
 
+![alt text](<docs/Item indexing C64.png>)
+
 
 # How to use
 
